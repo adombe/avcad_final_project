@@ -1,0 +1,54 @@
+
+Quadro extraído em 22 de Maio de 2026 (16:55:25)
+http://www.ine.pt
+
+
+
+Período de referência dos dados;Localização geográfica (NUTS - 2013) (1) ;Mão-de-obra agrícola (N.º) por Localização geográfica (NUTS - 2013), Tipo de mão-de-obra e Regime de duração de trabalho -  Não periódica;
+;;Tipo de mão-de-obra;
+;;Mão-de-obra agrícola total;
+;;Regime de duração de trabalho;
+;;Total;
+;;N.º ;
+2019;PT: Portugal;648252;
+;1: Continente;596938;
+2009;PT: Portugal;708076;
+;1: Continente;649607;
+1999;PT: Portugal;1083838;
+;1: Continente;1002480;
+1989;PT: Portugal;1560990;
+;1: Continente;1449906;
+
+Mão-de-obra agrícola (N.º) por Localização geográfica (NUTS - 2013), Tipo de mão-de-obra e Regime de duração de trabalho -  Não periódica - INE, Estatísticas agrícolas de base
+
+Nota(s):
+(1) A partir de 1 de janeiro de 2015 entrou em vigor uma nova versão das NUTS (NUTS 2013). Ao nível da NUTS II ocorreu apenas uma alteração de designação em "Lisboa" que passou a ser designada por "Área Metropolitana de Lisboa".
+
+
+
+Última atualização destes dados: 10 de dezembro de 2024
+
+
+Metainformação associada ao quadro
+
+Mão-de-obra agrícola (N.º)
+Designação;Mão-de-obra agrícola (N.º) por Localização geográfica (NUTS - 2013), Tipo de mão-de-obra e Regime de duração de trabalho -  Não periódica
+Periodicidade;Não periódica
+Fonte;INE, Estatísticas agrícolas de base
+Primeiro período disponível;1989
+Último período disponível;2023
+Dimensões
+     Dimensão 1;Período de referência dos dados
+     Dimensão 2;Localização geográfica (NUTS - 2013)
+     Dimensão 3;Tipo de mão-de-obra
+     Dimensão 4;Regime de duração de trabalho
+Conceitos
+     MÃO DE OBRA NÃO FAMILIAR;Pessoas remuneradas pela exploração e ocupadas nos trabalhos agrícolas da exploração que não sejam nem o produtor nem membros da sua família.
+     EXPLORAÇÃO AGRÍCOLA;Unidade técnico-económica que utiliza fatores de produção comuns, tais como mão de obra, máquinas, instalações, terrenos, entre outros, e satisfaz obrigatoriamente as quatro condições seguintes: 1) produzir produtos agrícolas ou manter, em boas condições agrícolas e ambientais, as terras que já não são utilizadas para fins produtivos; 2) atingir ou ultrapassar uma certa dimensão (em área ou número de animais); 3) estar submetida a uma gestão única; 4) estar localizada numa área bem determinada e identificável
+     PERÍODO DE REFERÊNCIA;Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros).
+     MÃO DE OBRA FAMILIAR;Pessoas pertencentes ao agregado doméstico do produtor que trabalham na exploração, bem como os membros da família do produtor que não pertencendo ao seu agregado doméstico trabalham regularmente na exploração.
+Definição;
+Fórmula;
+Unidade de Medida (símbolo);Número (N.º)
+Potência de 10;0
+Data da última atualização;10-Dec-2024

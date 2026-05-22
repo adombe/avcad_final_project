@@ -1,0 +1,51 @@
+
+Quadro extraído em 22 de Maio de 2026 (16:38:15)
+http://www.ine.pt
+
+
+
+Período de referência dos dados;Localização geográfica (NUTS - 2013);Superfície das explorações agrícolas (ha) por Localização geográfica (NUTS - 2013), Tipo de utilização das terras e Classes de superfície agrícola utilizada -  Decenal;
+;;Tipo de utilização das terras;
+;;Total;
+;;Classes de superfície agrícola utilizada;
+;;Total;
+;;ha ;
+2019;PT: Portugal;5121413;
+;1: Continente;4987658;
+2009;PT: Portugal;4709131;
+;1: Continente;4571531;
+1999;PT: Portugal;5188938;
+;1: Continente;5039569;
+1989;PT: Portugal;5316160;
+;1: Continente;5157213;
+
+Superfície das explorações agrícolas (ha) por Localização geográfica (NUTS - 2013), Tipo de utilização das terras e Classes de superfície agrícola utilizada -  Decenal - INE, Recenseamento agrícola - séries históricas
+
+
+Última atualização destes dados: 31 de março de 2021
+
+
+Metainformação associada ao quadro
+
+Superfície das explorações agrícolas (ha)
+Designação;Superfície das explorações agrícolas (ha) por Localização geográfica (NUTS - 2013), Tipo de utilização das terras e Classes de superfície agrícola utilizada -  Decenal
+Periodicidade;Decenal
+Fonte;INE, Recenseamento agrícola - séries históricas
+Primeiro período disponível;1989
+Último período disponível;2019
+Dimensões
+     Dimensão 1;Período de referência dos dados
+     Dimensão 2;Localização geográfica (NUTS - 2013)
+     Dimensão 3;Tipo de utilização das terras
+     Dimensão 4;Classes de superfície agrícola utilizada
+Conceitos
+     SUPERFÍCIE TOTAL DA EXPLORAÇÃO AGRÍCOLA;Soma da superfície agrícola utilizada, superfície dos povoamentos florestias sem culturas sobcoberto, superfície agrícola não utilizada e outras superfícies da exploração.
+     SUPERFÍCIE AGRÍCOLA UTILIZADA;Superfície da exploração que inclui terras aráveis (limpas e sobcoberto de povoamentos florestais), hortas familiares, culturas permanentes e pastagens permanentes.
+     EXPLORAÇÃO AGRÍCOLA;Unidade técnico-económica que utiliza fatores de produção comuns, tais como mão de obra, máquinas, instalações, terrenos, entre outros, e satisfaz obrigatoriamente as quatro condições seguintes: 1) produzir produtos agrícolas ou manter, em boas condições agrícolas e ambientais, as terras que já não são utilizadas para fins produtivos; 2) atingir ou ultrapassar uma certa dimensão (em área ou número de animais); 3) estar submetida a uma gestão única; 4) estar localizada numa área bem determinada e identificável
+     PERÍODO DE REFERÊNCIA;Período a que a informação se refere e que pode ser um dia específico ou um intervalo de tempo (mês, ano fiscal, ano civil, entre outros).
+Definição;
+Fórmula;
+Unidade de Medida (símbolo);Hectare (ha)
+Potência de 10;0
+Observações;A informação relativa a 1989, 1999, 2009, tem por base operações censitárias (Recenseamentos Agrícolas). Entre estes períodos, bienalmente nos anos ímpares e com excepção de 1991 e 2001, a informação tem por base inquéritos amostrais.
+Data da última atualização;31-Mar-2021
