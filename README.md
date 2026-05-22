@@ -1,19 +1,21 @@
 # Evolution of Agriculture in Mainland Portugal (1989–2019)
 
-Final project developed for an agro-environmental data analysis course, based on official data from Statistics Portugal (INE). This study explores how the structure of agriculture in mainland Portugal changed between 1989 and 2019, with a focus on labour, land use, temporary crops, permanent grasslands and pastures, and crop productivity.
+This repository contains the final project developed for the analysis of structural changes in agriculture in mainland Portugal between 1989 and 2019, using official data from Statistics Portugal (INE).
+
+The project aims to build a coherent story from a complex agro-environmental dataset, focusing on agricultural labour, total agricultural area, temporary crops, permanent grasslands and pastures, and crop productivity.
 
 ---
 
 ## Project goal
 
-The main objective of this project is to tell a coherent story from a complex agro-environmental dataset and identify the main structural changes in Portuguese agriculture over time.
+The main objective of this project is to identify and interpret long-term changes in the agricultural sector in mainland Portugal.
 
-More specifically, the project investigates long-term trends in:
-- agricultural labour;
-- total agricultural area;
-- temporary crop holdings;
-- permanent grasslands and pastures;
-- productivity of major agricultural crops.
+More specifically, the project investigates:
+- changes in agricultural labour;
+- variation in total agricultural area;
+- changes in holdings with temporary crops;
+- long-term patterns in permanent grasslands and pastures;
+- differences in productivity across major crop groups.
 
 ---
 
@@ -24,7 +26,7 @@ More specifically, the project investigates long-term trends in:
 ### Working hypotheses
 
 - Agricultural labour decreased over time.
-- The total agricultural area changed across the four reference years.
+- The total agricultural area changed across the reference years.
 - The number of holdings with temporary crops changed over time.
 - Permanent grasslands and pastures followed a distinct long-term trend.
 - Productivity patterns differed across crop groups.
@@ -111,6 +113,8 @@ The final project is expected to include:
 
 ---
 
-## Notes
+## Academic information
 
-This repository is intended to support the full workflow of the final project, from raw data preparation to final analysis and reporting.
+**Course:** Analysis and Visualisation of Complex Agro-Environmental Data  
+**Authors:** Fernanda Chácara, Dandara França, Andrea  
+**Institution:** Instituto Superior de Agronomia — Lisbon, Portugal
