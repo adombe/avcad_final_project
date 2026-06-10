@@ -80,7 +80,7 @@ avcad_final_project/
 ├── data/
 │   ├── raw/                  # Original files downloaded from INE
 │   └── processed/            # Cleaned and transformed datasets
-├── notebooks/                # Jupyter / Colab notebooks
+├── notebooks/                # Colab notebooks
 │   └── 01_data_loading_and_audit.ipynb
 ├── src/                      # Python scripts for data preparation and analysis
 ├── outputs/
