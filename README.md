@@ -120,7 +120,8 @@ The final project is expected to include:
 
 ## Academic information
 
-**Course:** Analysis and Visualisation of Complex Agro-Environmental Data  
+**Course:** Analysis and Visualisation of Complex Agro-Environmental Data
+
 **Authors:** Nº 27916 | Andrea Dombe, Nº 27916 | Dandara França, Nº 26298 | Fernanda Chácara
 
 **Institution:** Instituto Superior de Agronomia — Lisbon, Portugal
