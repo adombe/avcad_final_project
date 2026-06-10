@@ -2,7 +2,7 @@
 
 This repository contains the final project developed for the analysis of structural changes in agriculture in mainland Portugal between 1989 and 2019, using official data from Statistics Portugal (INE).
 
-The project aims to build a coherent story from a complex agro-environmental dataset, focusing on agricultural labour, total agricultural area, temporary crops, permanent grasslands and pastures, and crop productivity.
+The project aims to build a coherent story from a complex agro-environmental dataset, focusing on agricultural labour, total agricultural area, holdings with temporary crops, holdings with permanent crops, permanent grasslands and pastures, and crop productivity.
 
 ---
 
@@ -14,6 +14,7 @@ More specifically, the project investigates:
 - changes in agricultural labour;
 - variation in total agricultural area;
 - changes in holdings with temporary crops;
+- changes in holdings with permanent crops;
 - long-term patterns in permanent grasslands and pastures;
 - differences in productivity across major crop groups.
 
@@ -28,6 +29,7 @@ More specifically, the project investigates:
 - Agricultural labour decreased over time.
 - The total agricultural area changed across the reference years.
 - The number of holdings with temporary crops changed over time.
+- The number of holdings with permanent crops changed over time.
 - Permanent grasslands and pastures followed a distinct long-term trend.
 - Productivity patterns differed across crop groups.
 
@@ -41,6 +43,7 @@ This project uses official datasets from **Statistics Portugal (INE)**.
 - Agricultural labour
 - Agricultural holdings area
 - Holdings with temporary crops
+- Holdings with permanent crops
 - Permanent grasslands and pastures area
 - Productivity of main agricultural crops
 
@@ -59,13 +62,14 @@ This project uses official datasets from **Statistics Portugal (INE)**.
 
 The project is organized in the following stages:
 
-1. Definition of the research question and working hypotheses  
-2. Data collection and selection  
-3. Data cleaning and harmonization across years  
-4. Summary statistics  
-5. Exploratory data analysis  
-6. Inferential analysis, where appropriate  
-7. Final visualization and storytelling  
+1. Definition of the research question and working hypotheses
+2. Data collection and selection
+3. Data loading and audit
+4. Data cleaning and harmonization across years
+5. Summary statistics
+6. Exploratory data analysis
+7. Inferential analysis, where appropriate
+8. Final visualization and storytelling
 
 ---
 
@@ -77,6 +81,7 @@ avcad_final_project/
 │   ├── raw/                  # Original files downloaded from INE
 │   └── processed/            # Cleaned and transformed datasets
 ├── notebooks/                # Jupyter / Colab notebooks
+│   └── 01_data_loading_and_audit.ipynb
 ├── src/                      # Python scripts for data preparation and analysis
 ├── outputs/
 │   ├── figures/              # Charts and visual outputs
@@ -116,5 +121,5 @@ The final project is expected to include:
 ## Academic information
 
 **Course:** Analysis and Visualisation of Complex Agro-Environmental Data  
-**Authors:** Fernanda Chácara, Dandara França, Andrea  
+**Authors:** Fernanda Chácara, Dandara França, Andrea Dombe
 **Institution:** Instituto Superior de Agronomia — Lisbon, Portugal
