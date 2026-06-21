@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.py[cod]
+~$*.docx
+report/Report_AVCAD_final.docx
