@@ -4,3 +4,5 @@ __pycache__/
 *.py[cod]
 ~$*.docx
 report/Report_AVCAD_final.docx
+work_deps/
+scripts/build_report.py

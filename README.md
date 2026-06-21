@@ -5,7 +5,8 @@ Data, Master's in Green Data Science, Instituto Superior de Agronomia,
 Universidade de Lisboa (2025/2026).
 
 The project tells a national temporal story from official Statistics Portugal
-(INE) data. It examines agricultural labour, total agricultural area, holdings
+(INE) data. The complete pipeline begins with the original `.xls` exports and
+examines agricultural labour, total agricultural area, holdings
 reporting temporary and permanent crops, permanent grasslands, and crop
 productivity at four Agricultural Census reference years.
 
@@ -42,13 +43,16 @@ notebooks/01_data_loading_and_audit.ipynb
 notebooks/02_full_analysis.ipynb
                            Reproducible EDA and inference
 src/analysis.py            Authoritative analysis pipeline
+src/prepare_data.py        Raw XLS extraction, cleaning and validation
 outputs/figures/           Report-ready visualisations
 outputs/tables/            Descriptive and inferential results
-report/                    Existing written-report drafts
+report/Report_AVCAD_final.md
+                           Visual, reproducible final-report draft
 ```
 
-The Word-report drafts are retained for provenance. The final formatted report
-will be selected and reviewed separately by the team.
+The Word-report drafts are retained for provenance and remain outside the new
+commit. The Markdown report is the authoritative content draft and can be moved
+into the team's preferred Word template after final editorial review.
 
 ## Reproduce the analysis
 
@@ -59,6 +63,11 @@ python -m venv .venv
 pip install -r requirements.txt
 python src/analysis.py
 ```
+
+`src/analysis.py` first runs `src/prepare_data.py`, so the CSVs, audit table,
+analysis tables and figures are all rebuilt from the original INE files. The
+preparation step resolves merged headers and preserves missing values; this also
+prevents values from shifting into the wrong productivity columns.
 
 The notebook `02_full_analysis.ipynb` contains an Open in Colab badge and runs
 the same pipeline.
@@ -79,6 +88,8 @@ values prevent a complete four-year series.
   available data do not contain the required crop-area numerator.
 - Long INE filenames may require `git config --global core.longpaths true` on
   Windows.
+- `outputs/tables/data_provenance.csv` records the raw source, worksheet,
+  geographic filter, years and transformation used for each processed file.
 
 ## Team
 

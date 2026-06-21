@@ -1,6 +1,6 @@
-"""Reproducible analysis for the AVCAD final project.
+"""End-to-end reproducible analysis for the AVCAD final project.
 
-The script starts from the processed INE extracts committed to the repository,
+The script rebuilds the processed extracts from the original INE XLS files,
 creates a harmonised national time series, performs descriptive and cautious
 inferential analyses, and writes all report tables and figures under outputs/.
 """
@@ -20,6 +20,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy import stats
+
+try:
+    from src.prepare_data import prepare_processed_data
+except ModuleNotFoundError:  # Supports direct execution: python src/analysis.py
+    from prepare_data import prepare_processed_data
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -301,10 +306,48 @@ def create_figures(
     axis.grid(axis="x", alpha=0.22)
     save_figure(fig, "productivity_change.png")
 
+    changes = percent_change_table(core).set_index("indicator")["percent_change"]
+    cards = [
+        ("Agricultural labour", changes["Agricultural labour"], COLORS["labour"]),
+        ("Agricultural area", changes["Agricultural area"], COLORS["area"]),
+        ("Area per worker", changes["Agricultural area per worker"], "#4472C4"),
+        ("Temporary-crop holdings", changes["Holdings with temporary crops"], COLORS["temporary"]),
+        ("Permanent-crop holdings", changes["Holdings with permanent crops"], COLORS["permanent"]),
+        ("Permanent grasslands", changes["Permanent grasslands and pastures"], COLORS["grasslands"]),
+    ]
+    fig, axes = plt.subplots(2, 3, figsize=(11, 6.2))
+    fig.suptitle("Agricultural restructuring in mainland Portugal", fontsize=19, fontweight="bold", y=0.98)
+    fig.text(0.5, 0.91, "The land base remained, while labour and crop participation contracted", ha="center", fontsize=12, color="#555555")
+    for axis, (label, value, color) in zip(axes.flat, cards):
+        axis.set_facecolor("#F6F7F8")
+        axis.text(0.5, 0.61, f"{value:+.1f}%", ha="center", va="center", fontsize=28, fontweight="bold", color=color)
+        axis.text(0.5, 0.30, label, ha="center", va="center", fontsize=11, wrap=True)
+        axis.text(0.5, 0.12, "1989–2019", ha="center", va="center", fontsize=9, color="#666666")
+        axis.set_xticks([])
+        axis.set_yticks([])
+        for spine in axis.spines.values():
+            spine.set_color("#D9D9D9")
+    fig.subplots_adjust(top=0.84, hspace=0.25, wspace=0.18)
+    fig.savefig(FIGURES_DIR / "story_dashboard.png", dpi=300, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+    fig, axis = plt.subplots(figsize=(11, 2.6))
+    axis.axis("off")
+    steps = ["Raw INE\n.xls exports", "Header-aware\nextraction", "Scope and\nanchor checks", "Harmonised\n.csv files", "EDA and cautious\ninference", "Report-ready\ntables and figures"]
+    xs = np.linspace(0.08, 0.92, len(steps))
+    for index, (x, step) in enumerate(zip(xs, steps)):
+        axis.text(x, 0.5, step, ha="center", va="center", fontsize=10, bbox={"boxstyle": "round,pad=0.6", "facecolor": "#EAF1F8", "edgecolor": "#4472C4"})
+        if index < len(steps) - 1:
+            axis.annotate("", xy=(xs[index + 1] - 0.075, 0.5), xytext=(x + 0.075, 0.5), arrowprops={"arrowstyle": "->", "color": "#6B7280", "lw": 1.5})
+    axis.set_title("Reproducible data workflow", fontsize=15, fontweight="bold", pad=15)
+    fig.savefig(FIGURES_DIR / "data_pipeline.png", dpi=300, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
 
 def run_analysis() -> dict[str, pd.DataFrame]:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     TABLES_DIR.mkdir(parents=True, exist_ok=True)
+    prepare_processed_data()
     frames = read_processed()
     core = build_core_table(frames)
     changes = percent_change_table(core)
