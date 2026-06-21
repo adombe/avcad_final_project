@@ -1,130 +1,103 @@
-# Evolution of Agriculture in Mainland Portugal (1989–2019)
+# Agricultural Restructuring in Mainland Portugal (1989-2019)
 
-This repository contains the final project developed for the analysis of structural changes in agriculture in mainland Portugal between 1989 and 2019, using official data from Statistics Portugal (INE).
+Final project for Analysis and Visualisation of Complex Agro-Environmental
+Data, Master's in Green Data Science, Instituto Superior de Agronomia,
+Universidade de Lisboa (2025/2026).
 
-The project aims to build a coherent story from a complex agro-environmental dataset, focusing on agricultural labour, total agricultural area, holdings with temporary crops, holdings with permanent crops, permanent grasslands and pastures, and crop productivity.
-
----
-
-## Project goal
-
-The main objective of this project is to identify and interpret long-term changes in the agricultural sector in mainland Portugal.
-
-More specifically, the project investigates:
-- changes in agricultural labour;
-- variation in total agricultural area;
-- changes in holdings with temporary crops;
-- changes in holdings with permanent crops;
-- long-term patterns in permanent grasslands and pastures;
-- differences in productivity across major crop groups.
-
----
+The project tells a national temporal story from official Statistics Portugal
+(INE) data. The complete pipeline begins with the original `.xls` exports and
+examines agricultural labour, total agricultural area, holdings
+reporting temporary and permanent crops, permanent grasslands, and crop
+productivity at four Agricultural Census reference years.
 
 ## Research question
 
-**How did the structure of agriculture in mainland Portugal change between 1989 and 2019?**
+How did the structure of agriculture in mainland Portugal change between 1989
+and 2019?
 
-### Working hypotheses
+The processed extracts contain mainland totals only. The final analysis is
+therefore temporal rather than regional and does not claim to identify regional
+effects.
 
-- Agricultural labour decreased over time.
-- The total agricultural area changed across the reference years.
-- The number of holdings with temporary crops changed over time.
-- The number of holdings with permanent crops changed over time.
-- Permanent grasslands and pastures followed a distinct long-term trend.
-- Productivity patterns differed across crop groups.
+## Main findings
 
----
+Between 1989 and 2019:
 
-## Data sources
+- agricultural labour decreased 58.8%;
+- total agricultural area decreased only 3.3%;
+- agricultural area per worker increased 134.9%;
+- holdings reporting temporary crops decreased 72.1%;
+- holdings reporting permanent crops decreased 54.7%;
+- permanent grasslands and pastures increased 165.5%.
 
-This project uses official datasets from **Statistics Portugal (INE)**.
-
-### Main datasets
-- Agricultural labour
-- Agricultural holdings area
-- Holdings with temporary crops
-- Holdings with permanent crops
-- Permanent grasslands and pastures area
-- Productivity of main agricultural crops
-
-### Study area
-- Mainland Portugal
-
-### Time period
-- 1989
-- 1999
-- 2009
-- 2019
-
----
-
-## Methodological approach
-
-The project is organized in the following stages:
-
-1. Definition of the research question and working hypotheses
-2. Data collection and selection
-3. Data loading and audit
-4. Data cleaning and harmonization across years
-5. Summary statistics
-6. Exploratory data analysis
-7. Inferential analysis, where appropriate
-8. Final visualization and storytelling
-
----
+The combined evidence is consistent with agricultural restructuring toward
+less labour-intensive land management, not uniform disappearance of agriculture.
 
 ## Repository structure
 
 ```text
-avcad_final_project/
-├── data/
-│   ├── raw/                  # Original files downloaded from INE
-│   └── processed/            # Cleaned and transformed datasets
-├── notebooks/                # Colab notebooks
-│   └── 01_data_loading_and_audit.ipynb
-├── src/                      # Python scripts for data preparation and analysis
-├── outputs/
-│   ├── figures/              # Charts and visual outputs
-│   └── tables/               # Summary and analytical tables
-├── report/                   # Final written report
-├── README.md
-└── requirements.txt
+data/raw/                  Original INE .xls files
+data/processed/            Harmonised mainland extracts
+notebooks/01_data_loading_and_audit.ipynb
+                           Initial extraction/audit notebook
+notebooks/02_full_analysis.ipynb
+                           Reproducible EDA and inference
+src/analysis.py            Authoritative analysis pipeline
+src/prepare_data.py        Raw XLS extraction, cleaning and validation
+outputs/figures/           Report-ready visualisations
+outputs/tables/            Descriptive and inferential results
+report/Report_AVCAD_fernanda.md
+                           Visual, reproducible final-report draft
 ```
 
----
+The Word-report drafts are retained for provenance and remain outside the new
+commit. The Markdown report is the authoritative content draft and can be moved
+into the team's preferred Word template after final editorial review.
 
-## Tools and technologies
+## Reproduce the analysis
 
-The analysis is being developed using:
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+python src/analysis.py
+```
 
-- Python
-- Pandas
-- Matplotlib
-- Seaborn
-- Jupyter Notebook / Google Colab
-- Git and GitHub
+`src/analysis.py` first runs `src/prepare_data.py`, so the CSVs, audit table,
+analysis tables and figures are all rebuilt from the original INE files. The
+preparation step resolves merged headers and preserves missing values; this also
+prevents values from shifting into the wrong productivity columns.
 
----
+The notebook `02_full_analysis.ipynb` contains an Open in Colab badge and runs
+the same pipeline.
 
-## Expected outputs
+## Statistical interpretation
 
-The final project is expected to include:
+OLS and Spearman trend statistics are included because inferential analysis is
+required by the project brief. Each census series has only four observations,
+so p-values and confidence intervals must be interpreted cautiously. They do not
+establish causality. Productivity comparisons are descriptive where missing
+values prevent a complete four-year series.
 
-- A short written report
-- Descriptive statistics and analytical tables
-- Exploratory visualizations
-- Python code in annex
-- A GitHub repository documenting the workflow
+## Data notes
 
----
+- Crop-holding indicators count holdings reporting a crop group and are not
+  mutually exclusive.
+- The project does not estimate average crop-specific holding size because the
+  available data do not contain the required crop-area numerator.
+- Long INE filenames may require `git config --global core.longpaths true` on
+  Windows.
+- `outputs/tables/data_provenance.csv` records the raw source, worksheet,
+  geographic filter, years and transformation used for each processed file.
 
-## Academic information
+## Team
 
-**Course:** Analysis and Visualisation of Complex Agro-Environmental Data
+- Andrea Dombe - 27119
+- Dandara França - 27916
+- Fernanda Chácara - 26298
 
-**Authors:** 
-- Nº 27119 | Andrea Dombe
-- Nº 27916 | Dandara França
-- Nº 26298 | Fernanda Chácara
+## Sources
 
-**Institution:** Instituto Superior de Agronomia — Lisbon, Portugal
+- Statistics Portugal (INE), Agricultural Census and agricultural statistics.
+- Eurostat agriculture statistics for contextual interpretation.
