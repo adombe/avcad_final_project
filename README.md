@@ -46,7 +46,7 @@ src/analysis.py            Authoritative analysis pipeline
 src/prepare_data.py        Raw XLS extraction, cleaning and validation
 outputs/figures/           Report-ready visualisations
 outputs/tables/            Descriptive and inferential results
-report/Report_AVCAD_final.md
+report/Report_AVCAD_fernanda.md
                            Visual, reproducible final-report draft
 ```
 
